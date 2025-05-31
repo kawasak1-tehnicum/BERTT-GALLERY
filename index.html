@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Albums</h2>
+      <ul>
+        <li>Coastal</li>
+        <li>Mountains</li>
+        <li>Cityscape</li>
+      </ul>
+    </aside>
+    <main class="gallery">
+      <header>
+        <h1>Photo Gallery</h1>
+        <div class="buttons">
+          <button>Add</button>
+          <button>Settings</button>
+          <button>Sign in</button>
+        </div>
+      </header>
+      <div class="grid">
+        <!-- Сюда добавляй свои изображения -->
+        <div class="item">
+          <img src="photos/photo1.jpg" alt="Photo 1">
+          <a href="photos/photo1.jpg" download>Download</a>
+        </div>
+        <div class="item">
+          <img src="photos/photo2.jpg" alt="Photo 2">
+          <a href="photos/photo2.jpg" download>Download</a>
+        </div>
+        <!-- добавляй дальше по образцу -->
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
