@@ -1,23 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".item img");
-  images.forEach((img) => {
-    img.style.cursor = "pointer";
-    img.addEventListener("click", () => openPreview(img.src));
+  const gallery = document.getElementById("gallery");
+
+  const images = [
+    "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
+    "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg",
+    "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg",
+    "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg",
+    "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg",
+    "26.jpg", "27.jpg", "28.jpg", "29.jpg", "30.jpg", "31.jpg", "32.jpg"
+  ];
+
+  images.forEach(filename => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+
+    const img = document.createElement("img");
+    img.src = `photos/${filename}`;
+    img.alt = filename;
+
+    const link = document.createElement("a");
+    link.href = `photos/${filename}`;
+    link.download = filename;
+    link.textContent = "Скачать";
+
+    item.appendChild(img);
+    item.appendChild(link);
+    gallery.appendChild(item);
   });
 });
-function openPreview(src) {
-  const overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  const preview = document.createElement("div");
-  preview.classList.add("preview");
-  const image = document.createElement("img");
-  image.src = src;
-  const close = document.createElement("span");
-  close.innerHTML = "&times;";
-  close.classList.add("close");
-  close.onclick = () => document.body.removeChild(overlay);
-  preview.appendChild(close);
-  preview.appendChild(image);
-  overlay.appendChild(preview);
-  document.body.appendChild(overlay);
-}
